@@ -1,0 +1,22 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Nuevo registro</mat-card-title>
+        <div class="row">
+            <form [formGroup]="formularioIngresoPaises" (ngSubmit)="onSavePais()">
+                <input  type="hidden" formControlName="ID_Pais" required>
+                <mat-form-field class="row-item grow">
+                    <input matInput placeholder="Ingrese el Nombre del País" formControlName="Nombre_Pais" required>
+                </mat-form-field>
+                
+            
+                    <button type="submit" class="row-item" color="primary" mat-flat-button>
+                        <mat-icon>save</mat-icon> Guardar
+                    </button>&nbsp;
+                    <button type="button" mat-flat-button color="warn" (click)="onReserForm()">
+                        <mat-icon>clear</mat-icon> Limpiar
+                    </button>
+             
+            </form>
+        </div>
+    </mat-card>
+</div>

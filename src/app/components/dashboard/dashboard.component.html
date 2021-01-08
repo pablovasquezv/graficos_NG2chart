@@ -1,0 +1,34 @@
+<h1>Gràficos</h1>
+<div class="flex-row">
+    <div class="flex-row-item uno">
+        <mat-card>
+        
+            <app-grafico-barras-chart [(data)]="data" [(labels)]="labels"></app-grafico-barras-chart>
+        
+        </mat-card>
+    </div>
+</div>
+<div class="flex-row">
+    <div class="flex-row-item dos">
+        <mat-card>
+            <!--
+            <app-comparativo-mensual-chart></app-comparativo-mensual-chart>-->
+        </mat-card>
+    </div>
+    <div class="flex-row-item dos">
+        <mat-card>
+            <p>Gráfico de Circulo</p>
+        </mat-card>
+    </div>
+</div>
+
+<div class="flex-row">
+    <div class="flex-row-item uno">
+        <mat-card>
+            <mat-card-title>Mis registros</mat-card-title>
+            
+            <app-tabla-insulina ></app-tabla-insulina>
+             
+        </mat-card>
+    </div>
+</div>

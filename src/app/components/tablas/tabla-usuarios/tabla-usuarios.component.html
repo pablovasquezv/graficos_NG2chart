@@ -1,0 +1,81 @@
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="container-btn-new">
+  <button mat-stroked-button (click)="openModal()">
+    <mat-icon>save</mat-icon>&nbsp; <b>Nuevo</b> 
+  </button>
+</div>
+<!--Centrar tabla-->
+ 
+  <div class="table-responsive">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <!-- Rut_Usuario Column -->
+      <ng-container matColumnDef="Rut_Usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Rut</b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.Rut_Usuario}} </td>
+      </ng-container>
+
+      <!-- Nombres_Usuario Column -->
+      <ng-container matColumnDef="Nombres_Usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Nombres</b>  </th>
+        <td mat-cell *matCellDef="let element"> {{element.Nombres_Usuario}} </td>
+      </ng-container>
+
+      <!-- Apellido_Paterno_Usuario Column -->
+      <ng-container matColumnDef="Apellido_Paterno_Usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Paterno</b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.Apellido_Paterno_Usuario}} </td>
+      </ng-container>
+     <!-- Apellido_Paterno_Usuario Column -->
+     <ng-container matColumnDef="Apellido_Materno_Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Materno</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.Apellido_Materno_Usuario}} </td>
+    </ng-container>
+    <!-- Fecha_Nacimiento_Usuario Column -->
+    <ng-container matColumnDef="Fecha_Nacimiento_Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Nacimiento</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.Fecha_Nacimiento_Usuario}} </td>
+    </ng-container>
+    <!-- Sexo_Usuario Column -->
+    <ng-container matColumnDef="Sexo_Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Genero</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.Sexo_Usuario == 1?'Masculino' : 'Femenino'}} </td>
+    </ng-container>
+    <!-- Direccion_Usuario Column -->
+    <ng-container matColumnDef="Direccion_Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Dirección</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.Direccion_Usuario}} </td>
+    </ng-container>
+      <!-- Email_Usuario Column -->
+      <ng-container matColumnDef="Email_Usuario">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Email</b> </th>
+        <td mat-cell *matCellDef="let element"> {{element.Email_Usuario}} </td>
+      </ng-container>
+       <!-- Telefono_Usuario Column -->
+    <ng-container matColumnDef="Telefono_Usuario">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Celular</b> </th>
+      <td mat-cell *matCellDef="let element"> {{element.Telefono_Usuario}} </td>
+    </ng-container>
+
+      <!--  Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> <b>Actions</b> </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-flat-button color="accent" (click)="onEdit(element)">
+            <mat-icon>edit</mat-icon>&nbsp;<b>Editar</b>
+          </button>&nbsp;
+          <button mat-flat-button color="warn" (click)="onDelete(element.ID_Usuario)">
+            <mat-icon>delete</mat-icon> &nbsp; <b>Eliminar</b>
+          </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>

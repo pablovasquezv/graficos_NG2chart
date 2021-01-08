@@ -1,0 +1,14 @@
+.container-btn-close{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 1rem -06rem;
+    /**Estilo Botón*/
+    button{
+        width: 10%;
+        color: white;
+        background: red;
+        cursor: pointer;
+        margin: 1rem -06rem;
+    }
+}

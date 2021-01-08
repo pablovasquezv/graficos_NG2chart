@@ -1,0 +1,36 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title>Nuevo registro</mat-card-title>
+        <div class="row">
+            <form [formGroup]="formIngresoMediciones" (ngSubmit)="onSaveIngresoMediciones()">
+                <mat-form-field class="row-item grow">
+                    <input matInput placeholder="Nivel de glucosa" formControlName="Nivel" required>
+                </mat-form-field>
+                <mat-form-field class="row-item grow">
+                    <mat-label>Comida</mat-label>
+                    <mat-select formControlName="Comida" required>
+                        <mat-option value="Desayuno">Desayuno</mat-option>
+                        <mat-option value="Comida">Comida</mat-option>
+                        <mat-option value="Cena">Cena</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="row-item grow">
+                    <mat-label>Antes o después de alimentos</mat-label>
+                    <mat-select formControlName="AntesDespues">
+                        <mat-option value="Antes">Antes</mat-option>
+                        <mat-option value="Despues">Después</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="row-item grow">
+                    <input matInput type="datetime-local" placeholder="Fecha" formControlName="Fecha">
+                </mat-form-field>
+                <button type="submit" class="row-item" color="primary"  mat-flat-button>
+                    <mat-icon>save</mat-icon> Guardar
+                </button>&nbsp;
+                <button type="button" class="row-item" mat-flat-button color="warn" (click)="onReserForm()">
+                    <mat-icon>delete</mat-icon> Cancelar
+                </button>
+            </form>
+        </div>
+    </mat-card>
+    </div>

@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    /**Estilo Botón*/
+    form {
+        width: 95%;
+        justify-content: flex-end;
+    }
+    
+
+}
+.container > *{
+    width: 98%;
+    margin-left: 1%;
+}
+mat-form-field{
+    width: 100%;
+}

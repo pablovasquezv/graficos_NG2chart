@@ -1,0 +1,42 @@
+<div class="new-post-container">
+    <form [formGroup]="formularioIngresoUsuarios" (ngSubmit)=" onSaveIngresoUsuarios()">
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Rut " formControlName="Rut_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Nombres" formControlName="Nombres_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Apellido Paterno" formControlName="Apellido_Paterno_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Apellido Materno" formControlName="Apellido_Materno_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput type="date" placeholder="Fecha Nacimiento" formControlName="Fecha_Nacimiento_Usuario">
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <mat-label>Género</mat-label>
+            <mat-select formControlName="Sexo_Usuario">
+                <mat-option value="0">Femenino</mat-option>
+                <mat-option value="1">Masculino</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Email" formControlName="Email_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Teléfono" formControlName="Telefono_Usuario" required>
+        </mat-form-field>
+        <mat-form-field class="row-item grow">
+            <input matInput placeholder="Dirección" formControlName="Direccion_Usuario" required>
+        </mat-form-field>&nbsp;
+        <button type="submit" class="row-item" color="primary" mat-flat-button>
+            <mat-icon>save</mat-icon> Guardar
+        </button>&nbsp;
+        <button type="button" class="row-item" mat-flat-button color="warn" (click)="onReserForm()">
+            <mat-icon>delete</mat-icon> Cancelar
+        </button>
+    </form>
+</div>

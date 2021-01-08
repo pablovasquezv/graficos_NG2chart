@@ -1,0 +1,17 @@
+.new-post-container{
+    display: flex;
+    flex-direction: column;
+    
+      mat-form-field{
+        margin-top: 2rem;
+        width: 30%;
+      }
+    
+  }
+  /***/
+  .invisible{
+    display: block;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
